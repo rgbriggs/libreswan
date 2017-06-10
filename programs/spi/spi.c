@@ -1747,11 +1747,10 @@ int main(int argc, char *argv[])
 				if (get) {
 					struct sadb_lifetime *s =
 						(struct sadb_lifetime *)
-						extensions[
-							K_SADB_LIFETIME_CURRENT];
+						extensions[K_SADB_EXT_LIFETIME_CURRENT];
 
 					if (s != NULL) {
-						printf("%s: lifetime_current=%d(allocations)/%d(bytes)/%d(addtime)/%d(usetime)"
+						printf("%s: lifetime_current=%d(allocations)/%lu(bytes)/%lu(addtime)/%lu(usetime)"
 #ifdef NOT_YET
 						       "/%d(packets)"
 #endif /* NOT_YET */
