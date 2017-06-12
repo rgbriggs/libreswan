@@ -1390,8 +1390,8 @@ enum ipsec_xmit_value ipsec_xmit_cont(struct ipsec_xmit_state *ixs)
 		    ixs->sa_len ? ixs->sa_txt : " (error)");
 	KLIPS_IP_PRINT(debug_tunnel & DB_TN_XMIT, ixs->iph);
 
-	ixs->ipsp->ips_life.ipl_bytes.ipl_count += ixs->len;
-	ixs->ipsp->ips_life.ipl_bytes.ipl_last = ixs->len;
+	ixs->ipsp->ips_life.ipl_bytes.ipl_count += ixs->ilen;
+	ixs->ipsp->ips_life.ipl_bytes.ipl_last = ixs->ilen;
 
 	if (!ixs->ipsp->ips_life.ipl_usetime.ipl_count)
 		ixs->ipsp->ips_life.ipl_usetime.ipl_count = jiffies / HZ;
